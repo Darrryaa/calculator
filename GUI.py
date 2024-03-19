@@ -5,18 +5,17 @@ from calc import *
 def GUI():
     root = tk.Tk()
     root.title("Калькулятор")
-
-    root.geometry('300x500')
+    root.geometry('340x500')
+    
     input_l = tk.Entry(root, width=30)
     input_l.grid(row=0, column=0, columnspan=5, padx=10, pady=10)
     label = tk.Label(root, text="Результат: ")
     label.grid(row=1, column=1, columnspan=4, padx=10, pady=10)
-    
+
     # 1
     btn = tk.Button(root, text=str(1), command=lambda digit=1: add_digit("add", digit, input_l), height=3, width=5)
-    btn.grid(row=2, column=0, padx=10,
-             pady=10) 
-
+    btn.grid(row=2, column=0, padx=10, pady=10)  
+    
     # 2
     btn = tk.Button(root, text=str(2), command=lambda digit=2: add_digit("add", digit, input_l), height=3, width=5)
     btn.grid(row=2, column=1, padx=10, pady=10)
@@ -72,7 +71,13 @@ def GUI():
     # =
     btn = tk.Button(root, text="=", command=lambda input_ll=input_l: calculate(input_ll, label), height=3, width=5)
     btn.grid(row=6, column=4, padx=10, pady=10)
-
+    
     # <-
     btn = tk.Button(root, text="<-", command=lambda input_ll=input_l: add_digit("erase", 0, input_l), height=3, width=5)
     btn.grid(row=6, column=3, padx=10, pady=10)
+
+    # del
+    btn = tk.Button(root, text="del", command=lambda input_ll=input_l: add_digit("erase_all", 0, input_l, label), height=3, width=5)
+    btn.grid(row=6, column=2, padx=10, pady=10)
+
+    root.mainloop()
