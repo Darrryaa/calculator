@@ -90,4 +90,3 @@ def GUI():
     # <-
     btn = tk.Button(root, text="<-", command=lambda input_ll=input_l: add_digit("erase", 0, input_l), height=3, width=5)
     btn.grid(row=6, column=3, padx=10, pady=10)
-print('sdw')
