@@ -1,7 +1,7 @@
 # Case-study #4
 # Developers: Denisova D., Ukhov S., Simonov A., Zlygosteva M.
 
-from GUI import *
+import GUI 
 
 def main():
     GUI()
