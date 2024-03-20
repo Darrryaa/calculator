@@ -1,5 +1,5 @@
 import tkinter as tk
-from calc import *
+import calc
 import ru_local as ru
 
 
